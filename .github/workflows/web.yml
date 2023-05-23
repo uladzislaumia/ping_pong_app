@@ -18,3 +18,5 @@ jobs:
       - run: flutter test
       - run: flutter build web
       - uses: bluefireteam/flutter-gh-pages@v7
+        with:
+          baseHref: /ping_pong_app/
