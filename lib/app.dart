@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ping_pong_app/presentation/pages/game_page.dart';
 import 'package:ping_pong_app/presentation/pages/home_page.dart';
 
 class App extends StatelessWidget {
@@ -27,7 +28,22 @@ class App extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(title: 'Flutter Demo Home Page',),
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case '/':
+            return MaterialPageRoute(
+              settings: settings,
+              builder: (_) => const HomePage(
+                title: 'Ping Pong Assistant',
+              ),
+            );
+          case '/new-game':
+            return MaterialPageRoute(
+              settings: settings,
+              builder: (_) => const GamePage(),
+            );
+        }
+      },
     );
   }
 }
