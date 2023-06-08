@@ -13,19 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -60,12 +47,15 @@ class _HomePageState extends State<HomePage> {
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
+            const ElevatedButton(
+              onPressed: null,
+              child: const Text('History'),
+            ),
+            const SizedBox(height: 32),
             ElevatedButton(
               onPressed: () => Navigator.of(context).pushNamed('/new-game'),
-              child: Text(
-                'New game',
-              ),
+              child: const Text('New game'),
             ),
           ],
         ),

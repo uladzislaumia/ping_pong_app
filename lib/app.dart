@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ping_pong_app/presentation/core/themes/text_styles.dart';
 import 'package:ping_pong_app/presentation/pages/game_page.dart';
 import 'package:ping_pong_app/presentation/pages/home_page.dart';
 
@@ -27,6 +28,9 @@ class App extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        extensions: const [
+          TextStyles.base,
+        ],
       ),
       onGenerateRoute: (settings) {
         switch (settings.name) {
